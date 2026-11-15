@@ -3,143 +3,93 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#101a42">
-  <meta name="description" content="مغامرة تفاعلية لتعلّم جدول الضرب لطالبات الصف الثالث الابتدائي.">
-  <title>مغامرة جدول الضرب | الصف الثالث الابتدائي</title>
+  <meta name="theme-color" content="#fff8e9">
+  <meta name="description" content="مغامرة تفاعلية ممتعة لاكتشاف جداول الضرب لطالبات الصف الثالث الابتدائي.">
+  <title>مغامرات جدول الضرب | الصف الثالث الابتدائي</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400;500;600;700;800&display=swap');
-    :root{--night:#101a42;--night2:#192758;--ink:#20294a;--muted:#7580a4;--purple:#7057e8;--pink:#ff7f9f;--gold:#ffcf5a;--mint:#68d8bb;--sky:#67c9f3;--line:#e8eaf5;--paper:#fff;--soft:#f5f6ff;--shadow:0 16px 45px #18224d14}
-    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ink);font-family:'Baloo Bhaijaan 2',Tahoma,Arial,sans-serif;background:#f7f8ff;font-size:17px}
-    button,input{font:inherit}button{cursor:pointer}.wrap{width:min(1120px,92%);margin:auto}
-    .topbar{height:78px;display:flex;align-items:center;justify-content:space-between;gap:15px}.brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.12rem}.brand-icon{width:42px;height:42px;border-radius:14px;display:grid;place-items:center;color:#fff;background:var(--purple);box-shadow:0 7px 16px #7057e844;font-size:1.35rem}.grade{color:var(--muted);font-size:.92rem}
-    .hero{position:relative;overflow:hidden;padding:32px 5%;border-radius:30px;color:#fff;background:radial-gradient(circle at 82% 18%,#324584 0 2px,transparent 3px),radial-gradient(circle at 70% 70%,#ffffff22 0 2px,transparent 3px),linear-gradient(120deg,#111a42,#1a2c65 60%,#3a367f);background-size:50px 50px,72px 72px,auto;box-shadow:0 18px 42px #19275830}
-    .hero:before{content:"";position:absolute;width:330px;height:330px;border:1px solid #ffffff17;border-radius:50%;left:-90px;top:-150px;box-shadow:0 0 0 30px #ffffff08,0 0 0 65px #ffffff05}.hero-grid{position:relative;display:grid;grid-template-columns:1.15fr .85fr;align-items:center;gap:25px}.hero-copy{z-index:1}.label{display:inline-flex;align-items:center;gap:7px;padding:5px 13px;border:1px solid #ffffff35;border-radius:40px;background:#ffffff12;color:#e5e3ff;font-weight:700;font-size:.9rem}.hero h1{margin:13px 0 6px;font-size:clamp(2rem,4.6vw,3.55rem);line-height:1.15}.hero p{max-width:570px;margin:0;color:#d4dcff;line-height:1.75;font-size:1.08rem}.hero-visual{position:relative;display:grid;place-items:center;min-height:220px}.planet{width:190px;height:190px;border-radius:50%;display:grid;place-items:center;font-size:5.4rem;background:linear-gradient(145deg,#ffd86d,#ffac7a);box-shadow:inset -16px -16px 25px #e5786838,0 0 0 15px #ffffff0d,0 0 50px #ffc95758;animation:float 3s ease-in-out infinite}.orbit{position:absolute;width:260px;height:95px;border:2px solid #ffffff52;border-radius:50%;transform:rotate(-25deg)}.orbit:after{content:"✦";position:absolute;top:3px;left:25px;color:var(--gold);font-size:1.8rem}.satellite{position:absolute;right:13%;top:15%;font-size:2rem;animation:float 2.5s ease-in-out infinite reverse}@keyframes float{50%{transform:translateY(-9px)}}
-    .student-panel{position:relative;z-index:2;margin-top:22px;padding:13px 16px;display:flex;align-items:center;gap:12px;border:1px solid #ffffff35;border-radius:18px;background:#ffffff12;backdrop-filter:blur(8px)}.student-icon{font-size:1.55rem}.student-panel label{white-space:nowrap;font-weight:700;color:#e8e8ff}.student-panel input{width:min(320px,100%);padding:8px 12px;border:1px solid #ffffff35;border-radius:11px;outline:none;color:#fff;background:#ffffff13}.student-panel input::placeholder{color:#c7c9e6}.student-panel input:focus{border-color:var(--gold)}
-    .welcome{margin:22px 0 0;padding:16px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px;border:1px solid #e8e5fb;border-radius:18px;background:#fff;box-shadow:var(--shadow)}.welcome strong{font-size:1.15rem}.welcome span{color:var(--muted)}.streak{padding:7px 12px;border-radius:30px;background:#fff4d8;color:#8b6412;font-weight:800;white-space:nowrap}
-    .section{margin-top:42px;scroll-margin-top:20px}.section-title{text-align:center;margin:0 auto 20px}.section-title .mini{color:var(--purple);font-weight:800;font-size:.9rem}.section-title h2{margin:3px 0;font-size:clamp(1.55rem,3vw,2.1rem)}.section-title p{margin:3px 0;color:var(--muted)}
-    .journey{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}.table-card{position:relative;overflow:hidden;min-height:125px;padding:15px;border:2px solid transparent;border-radius:20px;background:#fff;text-align:center;box-shadow:var(--shadow);transition:.2s}.table-card:hover,.table-card.active{transform:translateY(-4px);border-color:var(--purple);box-shadow:0 12px 25px #7057e826}.table-card:after{content:"";position:absolute;width:65px;height:65px;border-radius:50%;background:var(--card-color);opacity:.12;left:-18px;bottom:-24px}.table-card .emoji{font-size:1.55rem}.table-card strong{display:block;font-size:1.12rem}.table-card small{color:var(--muted)}
-    .table-area{margin-top:18px;padding:24px;border:1px solid var(--line);border-radius:24px;background:#fff;box-shadow:var(--shadow)}.table-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:15px}.table-head h3{margin:0;font-size:1.35rem}.table-head p{margin:2px 0;color:var(--muted)}.table-badge{padding:7px 13px;border-radius:30px;background:#f0edff;color:var(--purple);font-weight:800;white-space:nowrap}.equations{display:grid;grid-template-columns:repeat(5,1fr);gap:9px}.equation{padding:10px 6px;border:1px solid #eceaf6;border-radius:13px;background:#fafaff;text-align:center;direction:ltr;font-weight:800;color:#4e4b75}.equation b{color:var(--purple)}
-    .mission{margin:42px 0 34px;padding:28px;border-radius:28px;background:linear-gradient(130deg,#282250,#38316d);color:white;box-shadow:0 18px 40px #2720502c}.mission .section-title h2{color:#fff}.mission .section-title p{color:#c6c3df}.mission .section-title .mini{color:#c4b8ff}.quiz{max-width:730px;margin:auto;padding:21px;border-radius:22px;background:#fff;color:var(--ink)}.quiz-top{display:flex;align-items:center;justify-content:space-between;gap:10px;color:var(--muted);font-weight:700}.score{color:#9a6b0a}.progress{height:9px;margin:12px 0 20px;border-radius:20px;background:#ececf6;overflow:hidden}.progress-in{height:100%;width:0;background:linear-gradient(90deg,#8973f0,#ff86aa);transition:width .3s}.question{margin:14px 0 21px;text-align:center;font-size:clamp(2rem,5vw,2.9rem);font-weight:800;direction:ltr;color:#343052}.options{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.option{padding:11px 8px;border:2px solid #eceaf6;border-radius:14px;background:#fbfaff;color:var(--ink);font-size:1.2rem;font-weight:800;transition:.15s}.option:hover:not(:disabled){border-color:var(--purple);background:#f0edff}.option:disabled{cursor:default}.option.correct{border-color:#52c595;background:#eafaf2;color:#21875f}.option.incorrect{border-color:#f18a9a;background:#fff0f2;color:#c65066}.feedback{min-height:30px;margin-top:13px;text-align:center;font-weight:800}.quiz-actions{display:flex;justify-content:center;gap:10px;margin-top:8px}.btn{padding:10px 19px;border:0;border-radius:13px;font-weight:800}.btn-primary{background:var(--purple);color:white}.btn-secondary{background:#efedf7;color:#625b7d}.btn:disabled{opacity:.45;cursor:not-allowed}.finish{display:none;text-align:center;padding:15px}.finish .medal{font-size:3.5rem}.finish h3{margin:0;font-size:1.7rem}.finish p{color:var(--muted)}
-    footer{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:20px 0 28px;border-top:1px solid var(--line);color:var(--muted)}footer strong{color:var(--purple)}
-    @media(max-width:800px){.hero-grid{grid-template-columns:1fr}.hero-visual{min-height:170px}.planet{width:145px;height:145px;font-size:4rem}.orbit{width:210px;height:75px}.satellite{right:25%;top:5%}.journey{grid-template-columns:repeat(3,1fr)}.equations{grid-template-columns:repeat(2,1fr)}}
-    @media(max-width:520px){.topbar{height:65px}.grade{font-size:.76rem}.hero{padding:25px 6%;border-radius:23px}.hero h1{font-size:2.1rem}.hero p{font-size:1rem}.student-panel{flex-wrap:wrap}.student-panel input{flex:1;min-width:160px}.welcome{align-items:flex-start;flex-direction:column}.journey{grid-template-columns:repeat(2,1fr);gap:9px}.table-card{min-height:110px}.table-area,.mission{padding:18px}.table-head{align-items:flex-start}.options{grid-template-columns:repeat(2,1fr)}.quiz{padding:16px}footer{flex-direction:column;text-align:center}}
+    :root{--ink:#28364b;--muted:#758174;--green:#36815e;--deep:#255c45;--mint:#dff1d9;--orange:#f2a64a;--pink:#ef8190;--yellow:#ffdc76;--line:#e6eadf;--shadow:0 15px 40px #39553612}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ink);font-family:'Baloo Bhaijaan 2',Tahoma,Arial,sans-serif;background:#fffaf0;font-size:17px}button,input{font:inherit}button{cursor:pointer}.wrap{width:min(1120px,92%);margin:auto}
+    .topbar{height:76px;display:flex;align-items:center;justify-content:space-between;gap:14px}.brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.12rem}.brand-icon{width:42px;height:42px;border-radius:14px;display:grid;place-items:center;color:#fff;background:var(--green);font-size:1.4rem;box-shadow:0 7px 16px #36815e40}.grade{color:var(--muted);font-size:.92rem}
+    .hero{position:relative;overflow:hidden;padding:38px 5%;border-radius:30px;color:#fff;background:linear-gradient(115deg,#28644b,#438e5e 55%,#8cba70);box-shadow:0 18px 42px #36815e30}.hero:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 85% 22%,#fff5 0 2px,transparent 3px),radial-gradient(circle at 70% 76%,#fff5 0 2px,transparent 3px);background-size:45px 45px,67px 67px;opacity:.65}.hero:after{content:"";position:absolute;width:330px;height:330px;border:1px solid #ffffff24;border-radius:50%;left:-100px;top:-180px;box-shadow:0 0 0 28px #ffffff0c,0 0 0 60px #ffffff08}.hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.2fr .8fr;align-items:center;gap:24px}.hero-copy .label{display:inline-flex;align-items:center;gap:7px;padding:5px 13px;border:1px solid #ffffff55;border-radius:40px;background:#ffffff16;font-weight:700;font-size:.9rem}.hero h1{margin:13px 0 7px;font-size:clamp(2rem,4.6vw,3.55rem);line-height:1.16}.hero p{max-width:570px;margin:0;color:#eff8e9;line-height:1.75;font-size:1.08rem}.hero-visual{position:relative;display:grid;place-items:center;min-height:220px}.trail{position:absolute;width:245px;height:120px;border:3px dashed #fff9;border-radius:50%;transform:rotate(-18deg)}.treasure{width:170px;height:150px;display:grid;place-items:center;border-radius:44% 56% 48% 52%;background:linear-gradient(145deg,#ffe897,#f5b858);box-shadow:inset -12px -12px 25px #bd793528,0 15px 35px #214c4040;font-size:5.4rem;animation:bob 3s ease-in-out infinite}.leaf{position:absolute;font-size:2rem;animation:bob 2.8s ease-in-out infinite}.leaf.one{top:14%;right:15%}.leaf.two{bottom:8%;left:10%;animation-delay:.7s}@keyframes bob{50%{transform:translateY(-8px) rotate(3deg)}}
+    .student-panel{position:relative;z-index:2;margin-top:22px;padding:13px 16px;display:flex;align-items:center;gap:12px;border:1px solid #ffffff55;border-radius:18px;background:#ffffff18;backdrop-filter:blur(8px)}.student-panel label{white-space:nowrap;font-weight:700}.student-panel input{width:min(320px,100%);padding:8px 12px;border:1px solid #ffffff60;border-radius:11px;outline:none;color:#fff;background:#ffffff14}.student-panel input::placeholder{color:#e1f1dc}.student-panel input:focus{border-color:var(--yellow)}
+    .welcome{margin:20px 0 0;padding:15px 19px;display:flex;align-items:center;justify-content:space-between;gap:12px;border:1px solid var(--line);border-radius:18px;background:#fff;box-shadow:var(--shadow)}.welcome strong{font-size:1.15rem}.welcome span{color:var(--muted)}.badge{padding:7px 12px;border-radius:30px;background:#fff2d6;color:#936721;font-weight:800;white-space:nowrap}
+    .section{margin-top:42px;scroll-margin-top:20px}.section-title{text-align:center;margin:0 auto 20px}.section-title .mini{color:var(--green);font-weight:800;font-size:.9rem}.section-title h2{margin:3px 0;font-size:clamp(1.55rem,3vw,2.1rem)}.section-title p{margin:3px 0;color:var(--muted)}
+    .journey{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}.table-card{position:relative;overflow:hidden;min-height:124px;padding:14px;border:2px solid transparent;border-radius:20px;background:#fff;text-align:center;box-shadow:var(--shadow);transition:.2s}.table-card:after{content:"";position:absolute;width:70px;height:70px;border-radius:50%;background:var(--card-color);opacity:.15;left:-18px;bottom:-28px}.table-card:hover,.table-card.active{transform:translateY(-4px);border-color:var(--green);box-shadow:0 12px 25px #36815e22}.table-card .emoji{font-size:1.55rem}.table-card strong{display:block;font-size:1.12rem}.table-card small{color:var(--muted)}
+    .table-area{margin-top:18px;padding:23px;border:1px solid var(--line);border-radius:24px;background:#fff;box-shadow:var(--shadow)}.table-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:15px}.table-head h3{margin:0;font-size:1.35rem}.table-head p{margin:2px 0;color:var(--muted)}.table-badge{padding:7px 13px;border-radius:30px;background:#edf7e9;color:var(--deep);font-weight:800;white-space:nowrap}.equations{display:grid;grid-template-columns:repeat(5,1fr);gap:9px}.equation{padding:10px 6px;border:1px solid #e8eee3;border-radius:13px;background:#fbfdf8;text-align:center;direction:ltr;font-weight:800;color:#4b5e4d}.equation b{color:var(--green)}
+    .mission{margin:42px 0 34px;padding:28px;border-radius:28px;background:linear-gradient(130deg,#345f46,#477b54);color:white;box-shadow:0 18px 40px #315c422b}.mission .section-title h2{color:#fff}.mission .section-title p{color:#e0efdf}.mission .section-title .mini{color:#ffe49a}.quiz{max-width:730px;margin:auto;padding:21px;border-radius:22px;background:#fff;color:var(--ink)}.quiz-top{display:flex;align-items:center;justify-content:space-between;gap:10px;color:var(--muted);font-weight:700}.score{color:#a46b10}.progress{height:9px;margin:12px 0 20px;border-radius:20px;background:#edf0e9;overflow:hidden}.progress-in{height:100%;width:0;background:linear-gradient(90deg,#78bf79,#ffc85c);transition:width .3s}.question{margin:14px 0 21px;text-align:center;font-size:clamp(2rem,5vw,2.9rem);font-weight:800;direction:ltr;color:#34443a}.options{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.option{padding:11px 8px;border:2px solid #e8eee3;border-radius:14px;background:#fcfdf9;color:var(--ink);font-size:1.2rem;font-weight:800;transition:.15s}.option:hover:not(:disabled){border-color:var(--green);background:#eff7ec}.option:disabled{cursor:default}.option.correct{border-color:#52bb87;background:#eaf8ef;color:#21875f}.option.incorrect{border-color:#ef8190;background:#fff0f2;color:#bd4d61}.feedback{min-height:30px;margin-top:13px;text-align:center;font-weight:800}.quiz-actions{display:flex;justify-content:center;gap:10px;margin-top:8px}.btn{padding:10px 19px;border:0;border-radius:13px;font-weight:800}.btn-primary{background:var(--green);color:white}.btn:disabled{opacity:.45;cursor:not-allowed}.finish{display:none;text-align:center;padding:15px}.finish .medal{font-size:3.5rem}.finish h3{margin:0;font-size:1.7rem}.finish p{color:var(--muted)}
+    footer{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:20px 0 28px;border-top:1px solid var(--line);color:var(--muted)}footer strong{color:var(--green)}
+    @media(max-width:800px){.hero-grid{grid-template-columns:1fr}.hero-visual{min-height:170px}.treasure{width:140px;height:125px;font-size:4.3rem}.trail{width:210px;height:80px}.journey{grid-template-columns:repeat(3,1fr)}.equations{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:520px){.topbar{height:65px}.grade{font-size:.76rem}.hero{padding:25px 6%;border-radius:23px}.hero h1{font-size:2.1rem}.hero p{font-size:1rem}.student-panel{flex-wrap:wrap}.student-panel input{flex:1;min-width:160px}.welcome{align-items:flex-start;flex-direction:column}.journey{grid-template-columns:repeat(2,1fr);gap:9px}.table-card{min-height:108px}.table-area,.mission{padding:18px}.table-head{align-items:flex-start}.options{grid-template-columns:repeat(2,1fr)}.quiz{padding:16px}footer{flex-direction:column;text-align:center}}
     @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;scroll-behavior:auto!important;transition:none!important}}
   </style>
 </head>
 <body>
   <div class="wrap">
-    <nav class="topbar" aria-label="رأس الصفحة"><div class="brand"><span class="brand-icon">✦</span><span>أكاديمية النجوم</span></div><div class="grade">مغامرة رياضيات <b>•</b> الصف الثالث الابتدائي</div></nav>
-
+    <nav class="topbar" aria-label="رأس الصفحة"><div class="brand"><span class="brand-icon">🌿</span><span>حديقة الأرقام</span></div><div class="grade">مغامرات جدول الضرب <b>•</b> الصف الثالث الابتدائي</div></nav>
     <header class="hero">
       <div class="hero-grid">
-        <div class="hero-copy"><span class="label">🚀 رحلة إلى كوكب الأرقام</span><h1>مستعدة لمغامرة<br>جدول الضرب؟</h1><p>اختاري جدولك، اجمعي النجوم، وأكملي المهمة لتصبحي بطلة الضرب! كل إجابة صحيحة تقرّبك من الكنز.</p></div>
-        <div class="hero-visual" aria-hidden="true"><div class="orbit"></div><div class="planet">🪐</div><span class="satellite">🚀</span></div>
+        <div class="hero-copy"><span class="label">🗺️ أهلًا بكِ في جزيرة الأرقام</span><h1>مغامرات جدول<br>الضرب تبدأ هنا!</h1><p>اتبعي خريطة الكنز، واكتشفي جداول الضرب خطوةً خطوة. اختاري جدولك، أجيبي عن التحديات، واجمعي النجوم في رحلتك الممتعة!</p></div>
+        <div class="hero-visual" aria-hidden="true"><div class="trail"></div><div class="treasure">🧭</div><span class="leaf one">🌴</span><span class="leaf two">🍃</span></div>
       </div>
-      <div class="student-panel"><span class="student-icon" aria-hidden="true">👩🏻‍🚀</span><label for="studentName">اسم البطلة:</label><input id="studentName" type="text" maxlength="30" placeholder="اكتبي اسمك هنا" autocomplete="name"></div>
+      <div class="student-panel"><span aria-hidden="true">👧🏻</span><label for="studentName">اسم المستكشفة:</label><input id="studentName" type="text" maxlength="30" placeholder="اكتبي اسمك هنا" autocomplete="name"></div>
     </header>
-
-    <div class="welcome"><div><strong id="welcomeText">أهلًا يا بطلة! 👋</strong><br><span>اختاري جدولًا وابدئي استكشاف الأرقام.</span></div><div class="streak">⭐ مغامرتك تبدأ الآن</div></div>
+    <div class="welcome"><div><strong id="welcomeText">أهلًا يا مستكشفة! 👋</strong><br><span>اختاري محطة من خريطة الأرقام وابدئي المغامرة.</span></div><div class="badge">🪙 كنز المعرفة بانتظارك</div></div>
 
     <section class="section" aria-labelledby="journeyTitle">
-      <div class="section-title"><span class="mini">خريطة المغامرة</span><h2 id="journeyTitle">اختاري كوكب جدولك</h2><p>اضغطي على أحد الجداول لعرض حقائقه والاستعداد للمهمة.</p></div>
+      <div class="section-title"><span class="mini">خريطة جزيرة الأرقام</span><h2 id="journeyTitle">اختاري جدول مغامرتك</h2><p>اضغطي على إحدى المحطات لتشاهدي حقائق جدول الضرب.</p></div>
       <div class="journey" id="journey"></div>
-      <div class="table-area" aria-live="polite">
-        <div class="table-head"><div><h3 id="tableTitle">جدول الضرب</h3><p>اقرئي حقائق الجدول ولاحظي النمط.</p></div><span class="table-badge" id="tableBadge">🌟 كوكب الأرقام</span></div>
-        <div class="equations" id="equations"></div>
-      </div>
+      <div class="table-area" aria-live="polite"><div class="table-head"><div><h3 id="tableTitle">جدول الضرب</h3><p>تعرّفي على المحطة، ثم استعدّي للتحدّي!</p></div><span class="table-badge" id="tableBadge">🌿 محطة الأرقام</span></div><div class="equations" id="equations"></div></div>
     </section>
 
     <section class="mission" aria-labelledby="missionTitle">
-      <div class="section-title"><span class="mini">المهمة الفضائية</span><h2 id="missionTitle">🎯 تحدّي بطلة الضرب</h2><p>أجيبي عن الأسئلة واجمعي أكبر عدد من النجوم!</p></div>
+      <div class="section-title"><span class="mini">تحدّي طريق الكنز</span><h2 id="missionTitle">🗝️ هل تستطيعين حلّ الشيفرة؟</h2><p>أجيبي عن الأسئلة واجمعي أكبر عدد من العملات الذهبية!</p></div>
       <div class="quiz">
-        <div id="quizContent">
-          <div class="quiz-top"><span id="counter">السؤال ١ من ٨</span><span class="score" id="score">⭐ النجوم: ٠</span></div>
-          <div class="progress"><div class="progress-in" id="progress"></div></div>
-          <div class="question" id="question">؟</div>
-          <div class="options" id="options" role="group" aria-label="��ختاري الإجابة الصحيحة"></div>
-          <div class="feedback" id="feedback" aria-live="polite"></div>
-          <div class="quiz-actions"><button class="btn btn-primary" id="next" type="button" disabled>السؤال التالي ←</button></div>
-        </div>
-        <div class="finish" id="finish" aria-live="polite"><div class="medal">🏆</div><h3 id="finishTitle">أحسنتِ!</h3><p id="finishMessage"></p><button class="btn btn-primary" id="replay" type="button">ابدئي مهمة جديدة ↻</button></div>
+        <div id="quizContent"><div class="quiz-top"><span id="counter">السؤال ١ من ٨</span><span class="score" id="score">🪙 العملات: ٠</span></div><div class="progress" aria-label="التقدم في التحدي"><div class="progress-in" id="progress"></div></div><div class="question" id="question">؟</div><div class="options" id="options" role="group" aria-label="اختاري الإجابة الصحيحة"></div><div class="feedback" id="feedback" aria-live="polite"></div><div class="quiz-actions"><button class="btn btn-primary" id="next" type="button" disabled>المحطة التالية ←</button></div></div>
+        <div class="finish" id="finish" aria-live="polite"><div class="medal">🏆</div><h3 id="finishTitle">أحسنتِ!</h3><p id="finishMessage"></p><button class="btn btn-primary" id="replay" type="button">ابدئي مغامرة جديدة ↻</button></div>
       </div>
     </section>
-
-    <footer><span>كل نجمة تبدأ بمحاولة… استمري فأنتِ قادرة! ✨</span><strong>إعداد المعلمة: منى الصاعدي</strong></footer>
+    <footer><span>كل إجابة صحيحة تقرّبك من الكنز! ✨</span><strong>إعداد المعلمة: منى الصاعدي</strong></footer>
   </div>
   <script>
     const arabicDigits='٠١٢٣٤٥٦٧٨٩';
     const toArabic=value=>String(value).replace(/\d/g,d=>arabicDigits[Number(d)]);
-    const colors=['#ff8b9e','#72c9e8','#a88af2','#ffbd5b','#68d8bb'];
-    const planetIcons=['🌙','🌊','🪐','☀️','🌈','⭐','🚀','💎','🦄','👑'];
-    let selectedTable=2, questions=[], questionIndex=0, stars=0, hasAnswered=false;
-
+    const colors=['#ff8b9e','#72c9e8','#a88af2','#ffbd5b','#68c99a'];
+    const icons=['🌼','🐠','🦋','🍯','🐢','🐬','🌻','🐝','🍄','🦜'];
+    let selectedTable=2,questions=[],questionIndex=0,coins=0,hasAnswered=false;
     function buildJourney(){
       const container=document.getElementById('journey');
       for(let n=1;n<=10;n++){
-        const button=document.createElement('button');
-        button.type='button';button.className='table-card'+(n===selectedTable?' active':'');button.style.setProperty('--card-color',colors[(n-1)%colors.length]);
-        button.setAttribute('aria-label',`اختاري جدول الضرب في ${toArabic(n)}`);
-        button.innerHTML=`<span class="emoji">${planetIcons[n-1]}</span><strong>جدول ${toArabic(n)}</strong><small>اكتشفي الكوكب</small>`;
-        button.addEventListener('click',()=>selectTable(n));container.appendChild(button);
+        const button=document.createElement('button');button.type='button';button.className='table-card'+(n===selectedTable?' active':'');button.style.setProperty('--card-color',colors[(n-1)%colors.length]);button.setAttribute('aria-label',`اختاري جدول الضرب في ${toArabic(n)}`);
+        button.innerHTML=`<span class="emoji">${icons[n-1]}</span><strong>جدول ${toArabic(n)}</strong><small>محطة ${toArabic(n)}</small>`;button.addEventListener('click',()=>selectTable(n));container.appendChild(button);
       }
     }
     function selectTable(n){
-      selectedTable=n;
-      document.querySelectorAll('.table-card').forEach((card,index)=>card.classList.toggle('active',index+1===n));
-      document.getElementById('tableTitle').textContent=`جدول الضرب في ${toArabic(n)}`;
-      document.getElementById('tableBadge').textContent=`${planetIcons[n-1]} كوكب ${toArabic(n)}`;
-      const equations=document.getElementById('equations');
-      equations.innerHTML='';
-      for(let i=1;i<=10;i++){
-        const item=document.createElement('div');item.className='equation';
-        item.innerHTML=`${toArabic(n)} <b>×</b> ${toArabic(i)} <b>=</b> ${toArabic(n*i)}`;equations.appendChild(item);
-      }
+      selectedTable=n;document.querySelectorAll('.table-card').forEach((card,index)=>card.classList.toggle('active',index+1===n));
+      document.getElementById('tableTitle').textContent=`جدول الضرب في ${toArabic(n)}`;document.getElementById('tableBadge').textContent=`${icons[n-1]} محطة ${toArabic(n)}`;
+      const box=document.getElementById('equations');box.innerHTML='';
+      for(let i=1;i<=10;i++){const item=document.createElement('div');item.className='equation';item.innerHTML=`${toArabic(n)} <b>×</b> ${toArabic(i)} <b>=</b> ${toArabic(n*i)}`;box.appendChild(item);}
       startQuiz();
     }
-    function getStudentName(){return document.getElementById('studentName').value.trim();}
-    function updateWelcome(){const name=getStudentName();document.getElementById('welcomeText').textContent=name?`أهلًا يا ${name}! 👋`:'أهلًا يا بطلة! 👋';}
-    function normalizeAnswer(text){return text.replace(/[٠-٩]/g,d=>String(arabicDigits.indexOf(d))).replace(/[۰-۹]/g,d=>String('۰۱۲۳۴۵۶۷۸۹'.indexOf(d))).trim();}
-    function makeQuestions(){
-      const values=Array.from({length:10},(_,i)=>i+1).sort(()=>Math.random()-.5).slice(0,8);
-      questions=values.map(n=>({factor:n,answer:selectedTable*n}));
-    }
-    function startQuiz(){
-      stars=0;questionIndex=0;makeQuestions();hasAnswered=false;
-      document.getElementById('quizContent').style.display='block';document.getElementById('finish').style.display='none';
-      renderQuestion();
-    }
+    function updateWelcome(){const name=document.getElementById('studentName').value.trim();document.getElementById('welcomeText').textContent=name?`أهلًا يا ${name}! 👋`:'أهلًا يا مستكشفة! 👋';}
+    function normalize(text){return text.replace(/[٠-٩]/g,d=>String(arabicDigits.indexOf(d))).replace(/[۰-۹]/g,d=>String('۰۱۲۳۴۵۶۷۸۹'.indexOf(d))).trim();}
+    function makeQuestions(){const factors=Array.from({length:10},(_,i)=>i+1).sort(()=>Math.random()-.5).slice(0,8);questions=factors.map(factor=>({factor,answer:selectedTable*factor}));}
+    function startQuiz(){coins=0;questionIndex=0;makeQuestions();document.getElementById('quizContent').style.display='block';document.getElementById('finish').style.display='none';renderQuestion();}
     function renderQuestion(){
-      hasAnswered=false;const item=questions[questionIndex];
-      document.getElementById('counter').textContent=`السؤال ${toArabic(questionIndex+1)} من ${toArabic(questions.length)}`;
-      document.getElementById('score').textContent=`⭐ النجوم: ${toArabic(stars)}`;
-      document.getElementById('progress').style.width=`${questionIndex/questions.length*100}%`;
-      document.getElementById('question').textContent=`${toArabic(selectedTable)} × ${toArabic(item.factor)} = ؟`;
-      document.getElementById('feedback').textContent='';document.getElementById('next').disabled=true;
-      const optionsSet=new Set([item.answer]);
-      while(optionsSet.size<4){const offset=Math.floor(Math.random()*9)-4;const candidate=Math.max(0,item.answer+offset);if(candidate!==item.answer)optionsSet.add(candidate);}
-      const options=[...optionsSet].sort(()=>Math.random()-.5);const box=document.getElementById('options');box.innerHTML='';
-      options.forEach(value=>{const btn=document.createElement('button');btn.type='button';btn.className='option';btn.textContent=toArabic(value);btn.addEventListener('click',()=>answerQuestion(btn,value,item.answer));box.appendChild(btn);});
+      hasAnswered=false;const item=questions[questionIndex];document.getElementById('counter').textContent=`السؤال ${toArabic(questionIndex+1)} من ${toArabic(questions.length)}`;document.getElementById('score').textContent=`🪙 العملات: ${toArabic(coins)}`;document.getElementById('progress').style.width=`${questionIndex/questions.length*100}%`;document.getElementById('question').textContent=`${toArabic(selectedTable)} × ${toArabic(item.factor)} = ؟`;document.getElementById('feedback').textContent='';document.getElementById('next').disabled=true;
+      const choices=new Set([item.answer]);while(choices.size<4){const offset=Math.floor(Math.random()*9)-4;const candidate=Math.max(0,item.answer+offset);if(candidate!==item.answer)choices.add(candidate);}
+      const options=[...choices].sort(()=>Math.random()-.5);const container=document.getElementById('options');container.innerHTML='';
+      options.forEach(value=>{const btn=document.createElement('button');btn.type='button';btn.className='option';btn.textContent=toArabic(value);btn.addEventListener('click',()=>answerQuestion(btn,value,item.answer));container.appendChild(btn);});
     }
     function answerQuestion(chosen,value,correct){
       if(hasAnswered)return;hasAnswered=true;const isCorrect=value===correct;
-      document.querySelectorAll('.option').forEach(btn=>{btn.disabled=true;if(normalizeAnswer(btn.textContent)===String(correct))btn.classList.add('correct');});
-      const feedback=document.getElementById('feedback');
-      if(isCorrect){stars++;feedback.textContent='إجابة صحيحة! أضفتِ نجمة إلى رصيدك 🌟';feedback.style.color='#21875f';}
-      else{chosen.classList.add('incorrect');feedback.textContent=`حاولي تذكّر الجدول؛ الإجابة الصحيحة ${toArabic(correct)}. أنتِ تستطيعين!`;feedback.style.color='#c65066';}
-      document.getElementById('score').textContent=`⭐ النجوم: ${toArabic(stars)}`;
-      document.getElementById('progress').style.width=`${(questionIndex+1)/questions.length*100}%`;
-      const next=document.getElementById('next');next.disabled=false;next.textContent=questionIndex===questions.length-1?'اكتشفي نتيجتك 🏆':'السؤال التالي ←';
+      document.querySelectorAll('.option').forEach(btn=>{btn.disabled=true;if(Number(normalize(btn.textContent))===correct)btn.classList.add('correct');});
+      const feedback=document.getElementById('feedback');if(isCorrect){coins++;feedback.textContent='إجابة صحيحة! حصلتِ على عملة ذهبية 🪙';feedback.style.color='#21875f';}else{chosen.classList.add('incorrect');feedback.textContent=`حاولي تذكّر الجدول؛ الإجابة الصحيحة ${toArabic(correct)}. واصلي الرحلة!`;feedback.style.color='#bd4d61';}
+      document.getElementById('score').textContent=`🪙 العملات: ${toArabic(coins)}`;document.getElementById('progress').style.width=`${(questionIndex+1)/questions.length*100}%`;const next=document.getElementById('next');next.disabled=false;next.textContent=questionIndex===questions.length-1?'افتحي صندوق الكنز 🏆':'المحطة التالية ←';
     }
     function nextQuestion(){if(!hasAnswered)return;questionIndex++;if(questionIndex>=questions.length){showFinish();return;}renderQuestion();}
-    function showFinish(){
-      document.getElementById('quizContent').style.display='none';document.getElementById('finish').style.display='block';
-      const name=getStudentName();document.getElementById('finishTitle').textContent=stars===8?`مذهلة يا ${name||'بطلة'}!`:`أحسنتِ يا ${name||'بطلة'}!`;
-      document.getElementById('finishMessage').textContent=`جمعتِ ${toArabic(stars)} من ${toArabic(questions.length)} نجوم في جدول الضرب في ${toArabic(selectedTable)}. ${stars===8?'لقد أتقنتِ المهمة الفضائية!':'راجعي الجدول وعودي لمغامرة جديدة!'}`;
-    }
-    document.getElementById('studentName').addEventListener('input',updateWelcome);
-    document.getElementById('next').addEventListener('click',nextQuestion);
-    document.getElementById('replay').addEventListener('click',startQuiz);
-    buildJourney();selectTable(selectedTable);
+    function showFinish(){document.getElementById('quizContent').style.display='none';document.getElementById('finish').style.display='block';const name=document.getElementById('studentName').value.trim()||'يا بطلة';document.getElementById('finishTitle').textContent=coins===8?`رائعة يا ${name}!`:`أحسنتِ يا ${name}!`;document.getElementById('finishMessage').textContent=`جمعتِ ${toArabic(coins)} من ${toArabic(questions.length)} عملات في جدول الضرب في ${toArabic(selectedTable)}. ${coins===8?'فتحتِ صند��ق الكنز وأتقنتِ الجدول!':'راجعي الجدول وعودي لمغامرة جديدة!'}`;}
+    document.getElementById('studentName').addEventListener('input',updateWelcome);document.getElementById('next').addEventListener('click',nextQuestion);document.getElementById('replay').addEventListener('click',startQuiz);buildJourney();selectTable(selectedTable);
   </script>
 </body>
 </html>
