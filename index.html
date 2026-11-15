@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#7048c6">
+  <title>رحلة الضرب في صفر وواحد</title>
+  <style>
+    :root{--purple:#7048c6;--pink:#f27aa5;--ink:#29324a;--paper:#fffdf8}
+    *{box-sizing:border-box}
+    body{margin:0;min-height:100vh;color:var(--ink);font-family:Tahoma,Arial,sans-serif;background:linear-gradient(135deg,#f8f2ff,#fff8e9)}
+    .page{width:min(920px,94%);margin:auto;padding:24px 0}
+    header{text-align:center;padding:25px 16px;border-radius:26px;color:#fff;background:linear-gradient(120deg,#7048c6,#a56de2 58%,#f27aa5);box-shadow:0 12px 28px #7048c633}
+    .badge{display:inline-block;padding:7px 15px;border-radius:999px;color:#543a88;background:#fff1bd;font-weight:bold}
+    h1{margin:12px 0 8px;font-size:clamp(1.7rem,5vw,2.7rem)}
+    header p{margin:0;font-size:1.1rem}.mascot{font-size:2rem;margin-top:10px}
+    .title{text-align:center;color:var(--purple);margin:24px 0 14px}
+    .rules{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:15px}
+    .rule{padding:20px;border:3px solid #b6e8f7;border-radius:22px;background:var(--paper);box-shadow:0 8px 20px #39335a12}
+    .rule.one{border-color:#ffd9a1}.rule h2{margin:0 0 12px;color:#1685af;font-size:1.25rem}.rule.one h2{color:#c77912}
+    .example{margin:12px 0;padding:12px;border-radius:14px;text-align:center;direction:ltr;font-size:1.5rem;font-weight:bold;background:#f5f2ff}
+    .rule p{margin-bottom:0;line-height:1.8}
+    .game{margin-top:22px;padding:22px;border-radius:24px;background:white;box-shadow:0 10px 24px #39335a16}
+    .gamehead{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px}.gamehead h2{margin:0;color:var(--purple)}
+    .score{padding:9px 14px;border-radius:999px;font-weight:bold;background:#f1eaff}
+    .questions{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:16px 0}
+    .question{padding:15px;text-align:center;border:2px solid #eee8fb;border-radius:18px;background:#fffdfd}
+    .equation{margin-bottom:10px;direction:ltr;font-size:1.65rem;font-weight:bold;color:#49347d}
+    input{width:90px;padding:9px;border:2px solid #d9d0ed;border-radius:12px;text-align:center;font:inherit;font-size:1.2rem;outline:none}
+    input:focus{border-color:var(--purple)}.feedback{min-height:24px;margin-top:8px;font-size:.95rem;font-weight:bold}
+    .correct{border-color:#65c999!important;background:#f0fff7}.incorrect{border-color:#ff9a9a!important;background:#fff5f5}
+    .actions{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:18px}
+    button{padding:12px 18px;border:0;border-radius:14px;color:#fff;font:inherit;font-weight:bold;cursor:pointer}
+    button:hover{filter:brightness(.95)}.check{background:var(--purple)}.new{background:#26a889}
+    #result{min-height:30px;margin-top:14px;text-align:center;font-size:1.1rem;font-weight:bold}
+    footer{margin-top:18px;padding:15px;text-align:center;color:#604d84;font-weight:bold}
+    @media print{body{background:#fff}.actions{display:none}.page{width:100%}.game,header,.rule{box-shadow:none}}
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header>
+      <span class="badge">رياضيات • الصف الثالث الابتدائي</span>
+      <h1>🌟 رحلة الأبطال في عالم الضرب 🌟</h1>
+      <p>هيا نكتشف سرّ الضرب في صفر وواحد!</p>
+      <div class="mascot" aria-hidden="true">🦉 ✨ 🧮</div>
+    </header>
+    <h2 class="title">📚 تذكّري القاعدة</h2>
+    <section class="rules" aria-label="قواعد الضرب">
+      <article class="rule">
+        <h2>💧 أي عدد نضربه في صفر</h2>
+        <div class="example">٧ × ٠ = ٠</div>
+        <p>الناتج دائمًا <strong>صفر</strong>، مهما كان العدد!</p>
+      </article>
+      <article class="rule one">
+        <h2>⭐ أي عدد نضربه في واحد</h2>
+        <div class="example">٦ × ١ = ٦</div>
+        <p>يبقى العدد <strong>كما هو</strong>، فلا يتغيّر!</p>
+      </article>
+    </section>
+    <section class="game" aria-labelledby="game-title">
+      <div class="gamehead"><h2 id="game-title">🎯 تحدّي الأبطال</h2><div class="score" id="score">النتيجة: ٠ من ٨</div></div>
+      <p>اكتبي ناتج كل عملية، ثم اضغطي على <strong>تحقّق من إجاباتي</strong>.</p>
+      <div class="questions" id="questions"></div>
+      <div class="actions">
+        <button class="check" type="button" onclick="checkAnswers()">تحقّق من إجاباتي</button>
+        <button class="new" type="button" onclick="makeQuiz()">ابدئي تحدّيًا جديدًا</button>
+      </div>
+      <div id="result" aria-live="polite"></div>
+    </section>
+    <footer>إعداد المعلمة: منى الصاعدي 💐</footer>
+  </main>
+  <script>
+    const arabicDigits = '٠١٢٣٤٥٦٧٨٩';
+    let problems = [];
+    function toArabicDigits(value){return String(value).replace(/\d/g,d=>arabicDigits[Number(d)]);}
+    function normalizeDigits(value){return value.replace(/[٠-٩]/g,d=>String(arabicDigits.indexOf(d))).replace(/[۰-۹]/g,d=>String('۰۱۲۳۴۵۶۷۸۹'.indexOf(d))).trim();}
+    function makeQuiz(){
+      problems=[];
+      for(let i=0;i<4;i++){const n=Math.floor(Math.random()*10)+1;problems.push({n,m:0,a:0});}
+      for(let i=0;i<4;i++){const n=Math.floor(Math.random()*10)+1;problems.push({n,m:1,a:n});}
+      problems.sort(()=>Math.random()-.5);
+      document.getElementById('questions').innerHTML=problems.map((p,i)=>`<div class="question" id="card-${i}"><div class="equation">${toArabicDigits(p.n)} × ${toArabicDigits(p.m)} = ؟</div><label for="answer-${i}">الناتج: </label><input id="answer-${i}" type="text" inputmode="numeric" autocomplete="off" aria-label="إجابة السؤال ${toArabicDigits(i+1)}"><div class="feedback" id="feedback-${i}"></div></div>`).join('');
+      document.getElementById('score').textContent='النتيجة: ٠ من ٨';document.getElementById('result').textContent='';
+    }
+    function checkAnswers(){
+      let count=0;
+      problems.forEach((p,i)=>{const input=document.getElementById(`answer-${i}`),card=document.getElementById(`card-${i}`),feedback=document.getElementById(`feedback-${i}`),answer=normalizeDigits(input.value);card.classList.remove('correct','incorrect');
+        if(answer!==''&&Number(answer)===p.a){count++;card.classList.add('correct');feedback.textContent='أحسنتِ! إجابة صحيحة 🎉';feedback.style.color='#168653';}
+        else{card.classList.add('incorrect');feedback.textContent=answer===''?'اكتبي إجابتك أولًا ✏️':`حاولي مرة أخرى؛ الإجابة ${toArabicDigits(p.a)} 🌱`;feedback.style.color='#c34d4d';}
+      });
+      document.getElementById('score').textContent=`النتيجة: ${toArabicDigits(count)} من ${toArabicDigits(problems.length)}`;
+      const result=document.getElementById('result');result.textContent=count===problems.length?'رائع! أنتِ بطلة الضرب ⭐🏆':'أكملي المحاولة، أنتِ قادرة! 💪';result.style.color=count===problems.length?'#168653':'#7048c6';
+    }
+    makeQuiz();
+  </script>
+</body>
+</html>
