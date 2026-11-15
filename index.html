@@ -3,269 +3,143 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f7f5ff">
-  <meta name="description" content="درس تفاعلي ممتع للصف الثالث الابتدائي عن الضرب في صفر وواحد، مع تدريبات فورية.">
-  <title>مغامرة الضرب في صفر وواحد | رياضيات الصف الثالث</title>
+  <meta name="theme-color" content="#101a42">
+  <meta name="description" content="مغامرة تفاعلية لتعلّم جدول الضرب لطالبات الصف الثالث الابتدائي.">
+  <title>مغامرة جدول الضرب | الصف الثالث الابتدائي</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400;500;600;700;800&display=swap');
-    :root{--ink:#252746;--muted:#777a94;--purple:#7057d9;--purple-dark:#5140ae;--lav:#f0edff;--pink:#ff8caa;--yellow:#ffd86f;--mint:#a8e8d2;--line:#eceaf4;--white:#fff;--shadow:0 18px 50px #49408012}
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{margin:0;background:#faf9ff;color:var(--ink);font-family:'Baloo Bhaijaan 2',Tahoma,Arial,sans-serif;font-size:17px}
-    button{font:inherit}
-    .shell{width:min(1120px,92%);margin:auto}
-    .topbar{height:78px;display:flex;align-items:center;justify-content:space-between;gap:18px}
-    .brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.15rem}
-    .brand-mark{width:42px;height:42px;border-radius:14px;display:grid;place-items:center;background:var(--purple);color:white;font-size:1.4rem;box-shadow:0 7px 16px #7057d944}
-    .top-tag{color:var(--muted);font-size:.92rem}
-    .hero{position:relative;overflow:hidden;min-height:345px;padding:48px 6%;border-radius:34px;background:linear-gradient(112deg,#7359df 0%,#8c72e8 52%,#ab8ded 100%);color:white;display:grid;grid-template-columns:1.25fr .75fr;align-items:center;box-shadow:0 20px 44px #7057d92b}
-    .hero:before,.hero:after{content:"";position:absolute;border-radius:50%;background:#ffffff12;pointer-events:none}
-    .hero:before{width:300px;height:300px;top:-150px;left:34%}.hero:after{width:190px;height:190px;bottom:-120px;right:35%}
-    .hero-copy,.hero-art{position:relative;z-index:1}
-    .eyebrow{display:inline-flex;align-items:center;gap:8px;padding:6px 13px;border:1px solid #ffffff47;border-radius:50px;background:#ffffff18;font-weight:700;font-size:.9rem}
-    .hero h1{max-width:620px;margin:17px 0 10px;font-size:clamp(2rem,4.7vw,3.55rem);line-height:1.22;font-weight:800}
-    .hero p{max-width:560px;margin:0;color:#f1edff;font-size:1.12rem;line-height:1.8}
-    .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
-    .btn{display:inline-flex;justify-content:center;align-items:center;gap:8px;padding:11px 20px;border:0;border-radius:14px;text-decoration:none;font-weight:800;cursor:pointer;transition:transform .18s,box-shadow .18s}
-    .btn:hover{transform:translateY(-2px)}.btn-light{background:#fff;color:var(--purple-dark);box-shadow:0 7px 16px #3e2d8730}.btn-ghost{color:#fff;border:1px solid #ffffff72;background:#ffffff12}
-    .hero-art{justify-self:center;display:grid;place-items:center;width:220px;height:220px;border-radius:48% 52% 43% 57%;background:#ffffff20;border:1px solid #ffffff3d;transform:rotate(-5deg)}
-    .hero-art-inner{width:170px;height:170px;border-radius:50%;display:grid;place-items:center;background:#fff;color:var(--purple);font-size:5.5rem;box-shadow:0 15px 40px #3e2d8735;transform:rotate(5deg)}
-    .spark{position:absolute;font-size:1.7rem}.spark.a{top:18px;right:14px}.spark.b{bottom:23px;left:6px}
-    .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:20px 0 44px}
-    .stat{display:flex;align-items:center;gap:12px;padding:14px 18px;border:1px solid var(--line);border-radius:18px;background:#fff;box-shadow:0 7px 24px #49408008}
-    .stat-icon{width:42px;height:42px;border-radius:13px;display:grid;place-items:center;background:var(--lav);font-size:1.3rem}.stat strong{display:block;font-size:.98rem}.stat span{color:var(--muted);font-size:.86rem}
-    section{scroll-margin-top:24px}.section-heading{text-align:center;margin:0 auto 23px}.section-heading .kicker{color:var(--purple);font-weight:800;font-size:.9rem}.section-heading h2{margin:2px 0;font-size:clamp(1.65rem,3vw,2.2rem);font-weight:800}.section-heading p{margin:4px 0 0;color:var(--muted)}
-    .learn{margin-bottom:48px}.rule-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-    .rule-card{position:relative;overflow:hidden;padding:24px;border:1px solid var(--line);border-radius:24px;background:#fff;box-shadow:var(--shadow)}
-    .rule-card.zero{--accent:#4ab8d5;--tint:#e9f9fc}.rule-card.one{--accent:#e5a528;--tint:#fff6dd}
-    .rule-top{display:flex;align-items:center;justify-content:space-between;gap:10px}.rule-icon{width:51px;height:51px;border-radius:17px;display:grid;place-items:center;background:var(--tint);font-size:1.65rem}
-    .rule-label{padding:5px 11px;border-radius:30px;background:var(--tint);color:var(--accent);font-weight:800;font-size:.86rem}
-    .rule-card h3{margin:16px 0 5px;font-size:1.4rem}.rule-card p{margin:0;color:var(--muted);line-height:1.75}
-    .rule-equation{display:flex;align-items:center;justify-content:center;gap:15px;margin-top:19px;padding:13px;border-radius:17px;background:var(--tint);direction:ltr;font-size:1.7rem;font-weight:800;color:var(--ink)}
-    .rule-equation b{color:var(--accent)}
-    .explore{margin-bottom:48px;padding:28px;border:1px solid var(--line);border-radius:26px;background:#fff;box-shadow:var(--shadow)}
-    .explore-head{display:flex;align-items:flex-start;justify-content:space-between;gap:16px}.explore-head h2{margin:0;font-size:1.5rem}.explore-head p{margin:4px 0;color:var(--muted)}
-    .switch{display:flex;gap:5px;padding:5px;border-radius:14px;background:#f4f2fa;flex-shrink:0}.switch button{padding:7px 16px;border:0;border-radius:10px;color:var(--muted);background:transparent;font-weight:800;cursor:pointer}.switch button.active{background:#fff;color:var(--purple);box-shadow:0 3px 10px #30245c15}
-    .number-row{display:grid;grid-template-columns:repeat(10,1fr);gap:9px;margin:22px 0 16px}
-    .number-btn{aspect-ratio:1;border:1px solid #e8e4f5;border-radius:14px;background:#fbfaff;color:var(--purple-dark);font-weight:800;font-size:1.1rem;cursor:pointer;transition:.18s}
-    .number-btn:hover,.number-btn.selected{border-color:var(--purple);background:var(--lav);transform:translateY(-2px)}
-    .reveal{min-height:85px;display:flex;align-items:center;justify-content:center;gap:12px;padding:14px;border:1px dashed #d9d3ee;border-radius:18px;background:#fcfbff;direction:ltr;font-size:clamp(1.55rem,4vw,2.2rem);font-weight:800}
-    .reveal .answer{color:var(--purple)}.reveal-note{margin:9px 0 0;text-align:center;color:var(--muted);font-size:.93rem}
-    .practice{margin-bottom:38px;padding:30px;border-radius:28px;background:#29264d;color:#fff;box-shadow:0 20px 45px #29264d22}
-    .practice .section-heading{margin-bottom:22px}.practice .section-heading .kicker{color:#c6baff}.practice .section-heading h2{color:#fff}.practice .section-heading p{color:#c7c4da}
-    .quiz-box{max-width:720px;margin:auto;padding:22px;border-radius:22px;background:#fff;color:var(--ink)}
-    .quiz-meta{display:flex;justify-content:space-between;align-items:center;gap:12px;color:var(--muted);font-size:.93rem;font-weight:700}
-    .progress{height:8px;margin:12px 0 20px;border-radius:10px;background:#eeeaf7;overflow:hidden}.progress-fill{height:100%;width:0;border-radius:10px;background:linear-gradient(90deg,#8b73ea,#f28cb1);transition:width .3s}
-    .quiz-question{text-align:center;margin:15px 0 20px;font-size:clamp(2rem,5vw,2.8rem);font-weight:800;direction:ltr;color:#343052}
-    .answers{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.answer-btn{padding:12px 8px;border:2px solid #eeeaf7;border-radius:14px;background:#fcfbff;color:var(--ink);font-size:1.2rem;font-weight:800;cursor:pointer;transition:.15s}.answer-btn:hover:not(:disabled){border-color:var(--purple);background:var(--lav)}.answer-btn:disabled{cursor:default}.answer-btn.right{border-color:#57c99a;background:#eafaf2;color:#21875f}.answer-btn.wrong{border-color:#f18a9a;background:#fff0f2;color:#c65066}
-    .quiz-feedback{min-height:28px;margin-top:14px;text-align:center;font-weight:800}.quiz-controls{display:flex;justify-content:center;gap:10px;margin-top:12px}.quiz-controls .btn{min-width:145px}.btn-purple{background:var(--purple);color:#fff}.btn-muted{background:#f0eef6;color:#625b7d}.quiz-controls button:disabled{opacity:.45;cursor:not-allowed;transform:none}
-    .finish{display:none;text-align:center;padding:12px}.finish .trophy{font-size:3.5rem}.finish h3{margin:4px 0;font-size:1.7rem}.finish p{color:var(--muted)}
-    footer{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;padding:20px 0 27px;border-top:1px solid var(--line);color:var(--muted);font-size:.95rem}footer strong{color:var(--purple-dark)}
-    @media(max-width:760px){.hero{grid-template-columns:1fr;padding:35px 7%;text-align:center}.hero p{margin:auto}.hero-actions{justify-content:center}.hero-art{width:150px;height:150px;margin:22px auto 0}.hero-art-inner{width:115px;height:115px;font-size:3.7rem}.stats{gap:8px;margin-bottom:35px}.stat{padding:11px;gap:8px}.stat-icon{width:35px;height:35px}.stat span{font-size:.78rem}.number-row{grid-template-columns:repeat(5,1fr)}.explore-head{display:block}.switch{width:max-content;margin-top:14px}.rule-grid{gap:12px}}
-    @media(max-width:520px){.topbar{height:66px}.top-tag{font-size:.78rem}.hero{border-radius:25px;min-height:unset}.hero h1{font-size:2rem}.hero p{font-size:1rem}.stats{grid-template-columns:1fr}.stat{padding:10px 14px}.rule-grid{grid-template-columns:1fr}.rule-card{padding:20px}.explore,.practice{padding:20px}.quiz-box{padding:16px}.answers{grid-template-columns:repeat(2,1fr)}footer{justify-content:center;text-align:center}}
-    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
+    :root{--night:#101a42;--night2:#192758;--ink:#20294a;--muted:#7580a4;--purple:#7057e8;--pink:#ff7f9f;--gold:#ffcf5a;--mint:#68d8bb;--sky:#67c9f3;--line:#e8eaf5;--paper:#fff;--soft:#f5f6ff;--shadow:0 16px 45px #18224d14}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ink);font-family:'Baloo Bhaijaan 2',Tahoma,Arial,sans-serif;background:#f7f8ff;font-size:17px}
+    button,input{font:inherit}button{cursor:pointer}.wrap{width:min(1120px,92%);margin:auto}
+    .topbar{height:78px;display:flex;align-items:center;justify-content:space-between;gap:15px}.brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.12rem}.brand-icon{width:42px;height:42px;border-radius:14px;display:grid;place-items:center;color:#fff;background:var(--purple);box-shadow:0 7px 16px #7057e844;font-size:1.35rem}.grade{color:var(--muted);font-size:.92rem}
+    .hero{position:relative;overflow:hidden;padding:32px 5%;border-radius:30px;color:#fff;background:radial-gradient(circle at 82% 18%,#324584 0 2px,transparent 3px),radial-gradient(circle at 70% 70%,#ffffff22 0 2px,transparent 3px),linear-gradient(120deg,#111a42,#1a2c65 60%,#3a367f);background-size:50px 50px,72px 72px,auto;box-shadow:0 18px 42px #19275830}
+    .hero:before{content:"";position:absolute;width:330px;height:330px;border:1px solid #ffffff17;border-radius:50%;left:-90px;top:-150px;box-shadow:0 0 0 30px #ffffff08,0 0 0 65px #ffffff05}.hero-grid{position:relative;display:grid;grid-template-columns:1.15fr .85fr;align-items:center;gap:25px}.hero-copy{z-index:1}.label{display:inline-flex;align-items:center;gap:7px;padding:5px 13px;border:1px solid #ffffff35;border-radius:40px;background:#ffffff12;color:#e5e3ff;font-weight:700;font-size:.9rem}.hero h1{margin:13px 0 6px;font-size:clamp(2rem,4.6vw,3.55rem);line-height:1.15}.hero p{max-width:570px;margin:0;color:#d4dcff;line-height:1.75;font-size:1.08rem}.hero-visual{position:relative;display:grid;place-items:center;min-height:220px}.planet{width:190px;height:190px;border-radius:50%;display:grid;place-items:center;font-size:5.4rem;background:linear-gradient(145deg,#ffd86d,#ffac7a);box-shadow:inset -16px -16px 25px #e5786838,0 0 0 15px #ffffff0d,0 0 50px #ffc95758;animation:float 3s ease-in-out infinite}.orbit{position:absolute;width:260px;height:95px;border:2px solid #ffffff52;border-radius:50%;transform:rotate(-25deg)}.orbit:after{content:"✦";position:absolute;top:3px;left:25px;color:var(--gold);font-size:1.8rem}.satellite{position:absolute;right:13%;top:15%;font-size:2rem;animation:float 2.5s ease-in-out infinite reverse}@keyframes float{50%{transform:translateY(-9px)}}
+    .student-panel{position:relative;z-index:2;margin-top:22px;padding:13px 16px;display:flex;align-items:center;gap:12px;border:1px solid #ffffff35;border-radius:18px;background:#ffffff12;backdrop-filter:blur(8px)}.student-icon{font-size:1.55rem}.student-panel label{white-space:nowrap;font-weight:700;color:#e8e8ff}.student-panel input{width:min(320px,100%);padding:8px 12px;border:1px solid #ffffff35;border-radius:11px;outline:none;color:#fff;background:#ffffff13}.student-panel input::placeholder{color:#c7c9e6}.student-panel input:focus{border-color:var(--gold)}
+    .welcome{margin:22px 0 0;padding:16px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px;border:1px solid #e8e5fb;border-radius:18px;background:#fff;box-shadow:var(--shadow)}.welcome strong{font-size:1.15rem}.welcome span{color:var(--muted)}.streak{padding:7px 12px;border-radius:30px;background:#fff4d8;color:#8b6412;font-weight:800;white-space:nowrap}
+    .section{margin-top:42px;scroll-margin-top:20px}.section-title{text-align:center;margin:0 auto 20px}.section-title .mini{color:var(--purple);font-weight:800;font-size:.9rem}.section-title h2{margin:3px 0;font-size:clamp(1.55rem,3vw,2.1rem)}.section-title p{margin:3px 0;color:var(--muted)}
+    .journey{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}.table-card{position:relative;overflow:hidden;min-height:125px;padding:15px;border:2px solid transparent;border-radius:20px;background:#fff;text-align:center;box-shadow:var(--shadow);transition:.2s}.table-card:hover,.table-card.active{transform:translateY(-4px);border-color:var(--purple);box-shadow:0 12px 25px #7057e826}.table-card:after{content:"";position:absolute;width:65px;height:65px;border-radius:50%;background:var(--card-color);opacity:.12;left:-18px;bottom:-24px}.table-card .emoji{font-size:1.55rem}.table-card strong{display:block;font-size:1.12rem}.table-card small{color:var(--muted)}
+    .table-area{margin-top:18px;padding:24px;border:1px solid var(--line);border-radius:24px;background:#fff;box-shadow:var(--shadow)}.table-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:15px}.table-head h3{margin:0;font-size:1.35rem}.table-head p{margin:2px 0;color:var(--muted)}.table-badge{padding:7px 13px;border-radius:30px;background:#f0edff;color:var(--purple);font-weight:800;white-space:nowrap}.equations{display:grid;grid-template-columns:repeat(5,1fr);gap:9px}.equation{padding:10px 6px;border:1px solid #eceaf6;border-radius:13px;background:#fafaff;text-align:center;direction:ltr;font-weight:800;color:#4e4b75}.equation b{color:var(--purple)}
+    .mission{margin:42px 0 34px;padding:28px;border-radius:28px;background:linear-gradient(130deg,#282250,#38316d);color:white;box-shadow:0 18px 40px #2720502c}.mission .section-title h2{color:#fff}.mission .section-title p{color:#c6c3df}.mission .section-title .mini{color:#c4b8ff}.quiz{max-width:730px;margin:auto;padding:21px;border-radius:22px;background:#fff;color:var(--ink)}.quiz-top{display:flex;align-items:center;justify-content:space-between;gap:10px;color:var(--muted);font-weight:700}.score{color:#9a6b0a}.progress{height:9px;margin:12px 0 20px;border-radius:20px;background:#ececf6;overflow:hidden}.progress-in{height:100%;width:0;background:linear-gradient(90deg,#8973f0,#ff86aa);transition:width .3s}.question{margin:14px 0 21px;text-align:center;font-size:clamp(2rem,5vw,2.9rem);font-weight:800;direction:ltr;color:#343052}.options{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.option{padding:11px 8px;border:2px solid #eceaf6;border-radius:14px;background:#fbfaff;color:var(--ink);font-size:1.2rem;font-weight:800;transition:.15s}.option:hover:not(:disabled){border-color:var(--purple);background:#f0edff}.option:disabled{cursor:default}.option.correct{border-color:#52c595;background:#eafaf2;color:#21875f}.option.incorrect{border-color:#f18a9a;background:#fff0f2;color:#c65066}.feedback{min-height:30px;margin-top:13px;text-align:center;font-weight:800}.quiz-actions{display:flex;justify-content:center;gap:10px;margin-top:8px}.btn{padding:10px 19px;border:0;border-radius:13px;font-weight:800}.btn-primary{background:var(--purple);color:white}.btn-secondary{background:#efedf7;color:#625b7d}.btn:disabled{opacity:.45;cursor:not-allowed}.finish{display:none;text-align:center;padding:15px}.finish .medal{font-size:3.5rem}.finish h3{margin:0;font-size:1.7rem}.finish p{color:var(--muted)}
+    footer{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:20px 0 28px;border-top:1px solid var(--line);color:var(--muted)}footer strong{color:var(--purple)}
+    @media(max-width:800px){.hero-grid{grid-template-columns:1fr}.hero-visual{min-height:170px}.planet{width:145px;height:145px;font-size:4rem}.orbit{width:210px;height:75px}.satellite{right:25%;top:5%}.journey{grid-template-columns:repeat(3,1fr)}.equations{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:520px){.topbar{height:65px}.grade{font-size:.76rem}.hero{padding:25px 6%;border-radius:23px}.hero h1{font-size:2.1rem}.hero p{font-size:1rem}.student-panel{flex-wrap:wrap}.student-panel input{flex:1;min-width:160px}.welcome{align-items:flex-start;flex-direction:column}.journey{grid-template-columns:repeat(2,1fr);gap:9px}.table-card{min-height:110px}.table-area,.mission{padding:18px}.table-head{align-items:flex-start}.options{grid-template-columns:repeat(2,1fr)}.quiz{padding:16px}footer{flex-direction:column;text-align:center}}
+    @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;scroll-behavior:auto!important;transition:none!important}}
   </style>
 </head>
 <body>
-  <div class="shell">
-    <nav class="topbar" aria-label="الترويسة">
-      <div class="brand"><span class="brand-mark" aria-hidden="true">م</span><span>رياضياتنا الممتعة</span></div>
-      <div class="top-tag">الصف الثالث الاب��دائي <span aria-hidden="true">✦</span> درس تفاعلي</div>
-    </nav>
+  <div class="wrap">
+    <nav class="topbar" aria-label="رأس الصفحة"><div class="brand"><span class="brand-icon">✦</span><span>أكاديمية النجوم</span></div><div class="grade">مغامرة رياضيات <b>•</b> الصف الثالث الابتدائي</div></nav>
 
     <header class="hero">
-      <div class="hero-copy">
-        <span class="eyebrow">🌈 هيا نتعلّم ونلعب</span>
-        <h1>مغامرة الضرب<br>في صفر وواحد</h1>
-        <p>اكتشفي سرّ العددين صفر وواحد، وجرّبي بنفسك كيف تتغيّر نواتج الضرب. مستعدة للتحدّي؟</p>
-        <div class="hero-actions">
-          <a class="btn btn-light" href="#lesson">ابدئي التعلّم <span aria-hidden="true">←</span></a>
-          <a class="btn btn-ghost" href="#challenge">انتقلي إلى التحدّي</a>
-        </div>
+      <div class="hero-grid">
+        <div class="hero-copy"><span class="label">🚀 رحلة إلى كوكب الأرقام</span><h1>مستعدة لمغامرة<br>جدول الضرب؟</h1><p>اختاري جدولك، اجمعي النجوم، وأكملي المهمة لتصبحي بطلة الضرب! كل إجابة صحيحة تقرّبك من الكنز.</p></div>
+        <div class="hero-visual" aria-hidden="true"><div class="orbit"></div><div class="planet">🪐</div><span class="satellite">🚀</span></div>
       </div>
-      <div class="hero-art" aria-hidden="true"><span class="spark a">✦</span><div class="hero-art-inner">🦉</div><span class="spark b">⭐</span></div>
+      <div class="student-panel"><span class="student-icon" aria-hidden="true">👩🏻‍🚀</span><label for="studentName">اسم البطلة:</label><input id="studentName" type="text" maxlength="30" placeholder="اكتبي اسمك هنا" autocomplete="name"></div>
     </header>
 
-    <div class="stats" aria-label="معلومات الدرس">
-      <div class="stat"><div class="stat-icon">📘</div><div><strong>درس اليوم</strong><span>الضرب في صفر وواحد</span></div></div>
-      <div class="stat"><div class="stat-icon">⏱️</div><div><strong>وقت ممتع</strong><span>تعلّمي على راحتك</span></div></div>
-      <div class="stat"><div class="stat-icon">🏅</div><div><strong>أنتِ بطلة</strong><span>تدرّبي واحصلي على نتيجتك</span></div></div>
-    </div>
+    <div class="welcome"><div><strong id="welcomeText">أهلًا يا بطلة! 👋</strong><br><span>اختاري جدولًا وابدئي استكشاف الأرقام.</span></div><div class="streak">⭐ مغامرتك تبدأ الآن</div></div>
 
-    <section class="learn" id="lesson">
-      <div class="section-heading"><span class="kicker">الفكرة ببساطة</span><h2>قاعدتان سهلتان… ونتائج مدهشة!</h2><p>تذكّري القاعدة، ثم استخدميها في كل عملية ضرب.</p></div>
-      <div class="rule-grid">
-        <article class="rule-card zero">
-          <div class="rule-top"><span class="rule-icon">💧</span><span class="rule-label">قاعدة الصفر</span></div>
-          <h3>الضرب في صفر</h3><p>أي عدد نضربه في صفر يكون الناتج صفرًا دائمًا.</p>
-          <div class="rule-equation"><span>٧</span><b>×</b><span>٠</span><b>=</b><span>٠</span></div>
-        </article>
-        <article class="rule-card one">
-          <div class="rule-top"><span class="rule-icon">⭐</span><span class="rule-label">قاعدة الواحد</span></div>
-          <h3>الضرب في واحد</h3><p>أي عدد نضربه في واحد يبقى كما هو، ولا يتغيّر.</p>
-          <div class="rule-equation"><span>٦</span><b>×</b><span>١</span><b>=</b><span>٦</span></div>
-        </article>
+    <section class="section" aria-labelledby="journeyTitle">
+      <div class="section-title"><span class="mini">خريطة المغامرة</span><h2 id="journeyTitle">اختاري كوكب جدولك</h2><p>اضغطي على أحد الجداول لعرض حقائقه والاستعداد للمهمة.</p></div>
+      <div class="journey" id="journey"></div>
+      <div class="table-area" aria-live="polite">
+        <div class="table-head"><div><h3 id="tableTitle">جدول الضرب</h3><p>اقرئي حقائق الجدول ولاحظي النمط.</p></div><span class="table-badge" id="tableBadge">🌟 كوكب الأرقام</span></div>
+        <div class="equations" id="equations"></div>
       </div>
     </section>
 
-    <section class="explore" aria-labelledby="explore-title">
-      <div class="explore-head">
-        <div><h2 id="explore-title">🔎 اكتشفي النمط بنفسك</h2><p>اختاري عددًا من البطاقات وشاهدي ماذا يحدث عند ضربه.</p></div>
-        <div class="switch" role="group" aria-label="اختاري جدول الضرب">
-          <button type="button" class="active" id="zeroTab" aria-pressed="true" onclick="setMultiplier(0)">× صفر</button>
-          <button type="button" id="oneTab" aria-pressed="false" onclick="setMultiplier(1)">× واحد</button>
-        </div>
-      </div>
-      <div class="number-row" id="numberRow" aria-label="اختاري عددًا"></div>
-      <div class="reveal" id="reveal" aria-live="polite"><span>اختاري عددًا للبدء</span></div>
-      <p class="reveal-note" id="revealNote">راقبي الناتج: هل تغيّر العدد أم بقي كما هو؟</p>
-    </section>
-
-    <section class="practice" id="challenge">
-      <div class="section-heading"><span class="kicker">حان وقت اللعب</span><h2>🎯 تحدّي الأبطال</h2><p>اختاري الإجابة الصحيحة، واجمعي النجوم!</p></div>
-      <div class="quiz-box">
+    <section class="mission" aria-labelledby="missionTitle">
+      <div class="section-title"><span class="mini">المهمة الفضائية</span><h2 id="missionTitle">🎯 تحدّي بطلة الضرب</h2><p>أجيبي عن الأسئلة واجمعي أكبر عدد من النجوم!</p></div>
+      <div class="quiz">
         <div id="quizContent">
-          <div class="quiz-meta"><span id="questionCounter">السؤال ١ من ٨</span><span id="scoreLabel">⭐ رصيدك: ٠</span></div>
-          <div class="progress" aria-label="تقدم الأسئلة"><div class="progress-fill" id="progressFill"></div></div>
-          <div class="quiz-question" id="quizQuestion">؟</div>
-          <div class="answers" id="answers" role="group" aria-label="اختاري الإجابة"></div>
-          <div class="quiz-feedback" id="quizFeedback" aria-live="polite"></div>
-          <div class="quiz-controls"><button class="btn btn-purple" id="nextBtn" type="button" onclick="nextQuestion()" disabled>السؤال التالي ←</button></div>
+          <div class="quiz-top"><span id="counter">السؤال ١ من ٨</span><span class="score" id="score">⭐ النجوم: ٠</span></div>
+          <div class="progress"><div class="progress-in" id="progress"></div></div>
+          <div class="question" id="question">؟</div>
+          <div class="options" id="options" role="group" aria-label="��ختاري الإجابة الصحيحة"></div>
+          <div class="feedback" id="feedback" aria-live="polite"></div>
+          <div class="quiz-actions"><button class="btn btn-primary" id="next" type="button" disabled>السؤال التالي ←</button></div>
         </div>
-        <div class="finish" id="finish" aria-live="polite"><div class="trophy">🏆</div><h3 id="finishTitle">أحسنتِ!</h3><p id="finishText"></p><button class="btn btn-purple" type="button" onclick="restartQuiz()">العبِي مرة أخرى ↻</button></div>
+        <div class="finish" id="finish" aria-live="polite"><div class="medal">🏆</div><h3 id="finishTitle">أحسنتِ!</h3><p id="finishMessage"></p><button class="btn btn-primary" id="replay" type="button">ابدئي مهمة جديدة ↻</button></div>
       </div>
     </section>
 
-    <footer><span>التعلّم رحلة جميلة، وكل محاولة تقرّبك من النجاح 💜</span><strong>إعداد المعلمة: منى الصاعدي</strong></footer>
+    <footer><span>كل نجمة تبدأ بمحاولة… استمري فأنتِ قادرة! ✨</span><strong>إعداد المعلمة: منى الصاعدي</strong></footer>
   </div>
-
   <script>
-    const digits = '٠١٢٣٤٥٦٧٨٩';
-    const toArabic = value => String(value).replace(/\d/g, digit => digits[Number(digit)]);
-    let multiplier = 0;
-    let selectedNumber = null;
-    let questionIndex = 0;
-    let score = 0;
-    let answered = false;
-    let quiz = [];
+    const arabicDigits='٠١٢٣٤٥٦٧٨٩';
+    const toArabic=value=>String(value).replace(/\d/g,d=>arabicDigits[Number(d)]);
+    const colors=['#ff8b9e','#72c9e8','#a88af2','#ffbd5b','#68d8bb'];
+    const planetIcons=['🌙','🌊','🪐','☀️','🌈','⭐','🚀','💎','🦄','👑'];
+    let selectedTable=2, questions=[], questionIndex=0, stars=0, hasAnswered=false;
 
-    function setMultiplier(value) {
-      multiplier = value;
-      document.getElementById('zeroTab').classList.toggle('active', value === 0);
-      document.getElementById('oneTab').classList.toggle('active', value === 1);
-      document.getElementById('zeroTab').setAttribute('aria-pressed', String(value === 0));
-      document.getElementById('oneTab').setAttribute('aria-pressed', String(value === 1));
-      if (selectedNumber !== null) showEquation(selectedNumber);
-    }
-
-    function showEquation(number) {
-      selectedNumber = number;
-      document.querySelectorAll('.number-btn').forEach(button => button.classList.toggle('selected', Number(button.dataset.number) === number));
-      const answer = number * multiplier;
-      document.getElementById('reveal').innerHTML = `<span>${toArabic(number)}</span><b>×</b><span>${toArabic(multiplier)}</span><b>=</b><span class="answer">${toArabic(answer)}</span>`;
-      document.getElementById('revealNote').textContent = multiplier === 0 ? 'لاحظي: الناتج صفر مهما كان العدد!' : 'لاحظي: الناتج هو العدد نفسه، لم يتغيّر!';
-    }
-
-    function buildNumberRow() {
-      const row = document.getElementById('numberRow');
-      for (let number = 1; number <= 10; number++) {
-        const button = document.createElement('button');
-        button.type = 'button'; button.className = 'number-btn'; button.dataset.number = number;
-        button.textContent = toArabic(number); button.setAttribute('aria-label', `اختاري العدد ${toArabic(number)}`);
-        button.addEventListener('click', () => showEquation(number));
-        row.appendChild(button);
+    function buildJourney(){
+      const container=document.getElementById('journey');
+      for(let n=1;n<=10;n++){
+        const button=document.createElement('button');
+        button.type='button';button.className='table-card'+(n===selectedTable?' active':'');button.style.setProperty('--card-color',colors[(n-1)%colors.length]);
+        button.setAttribute('aria-label',`اختاري جدول الضرب في ${toArabic(n)}`);
+        button.innerHTML=`<span class="emoji">${planetIcons[n-1]}</span><strong>جدول ${toArabic(n)}</strong><small>اكتشفي الكوكب</small>`;
+        button.addEventListener('click',()=>selectTable(n));container.appendChild(button);
       }
     }
-
-    function makeQuiz() {
-      const items = [];
-      for (let number = 1; number <= 10; number++) {
-        items.push({a:number,b:0,answer:0},{a:number,b:1,answer:number});
+    function selectTable(n){
+      selectedTable=n;
+      document.querySelectorAll('.table-card').forEach((card,index)=>card.classList.toggle('active',index+1===n));
+      document.getElementById('tableTitle').textContent=`جدول الضرب في ${toArabic(n)}`;
+      document.getElementById('tableBadge').textContent=`${planetIcons[n-1]} كوكب ${toArabic(n)}`;
+      const equations=document.getElementById('equations');
+      equations.innerHTML='';
+      for(let i=1;i<=10;i++){
+        const item=document.createElement('div');item.className='equation';
+        item.innerHTML=`${toArabic(n)} <b>×</b> ${toArabic(i)} <b>=</b> ${toArabic(n*i)}`;equations.appendChild(item);
       }
-      for (let i = items.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [items[i],items[j]] = [items[j],items[i]];
-      }
-      quiz = items.slice(0,8);
+      startQuiz();
     }
-
-    function renderQuestion() {
-      answered = false;
-      const item = quiz[questionIndex];
-      document.getElementById('questionCounter').textContent = `السؤال ${toArabic(questionIndex + 1)} من ${toArabic(quiz.length)}`;
-      document.getElementById('scoreLabel').textContent = `⭐ رصيدك: ${toArabic(score)}`;
-      document.getElementById('progressFill').style.width = `${(questionIndex / quiz.length) * 100}%`;
-      document.getElementById('quizQuestion').textContent = `${toArabic(item.a)} × ${toArabic(item.b)} = ؟`;
-      document.getElementById('quizFeedback').textContent = '';
-      document.getElementById('nextBtn').disabled = true;
-      const wrongOptions = new Set();
-      while (wrongOptions.size < 3) {
-        let option = Math.floor(Math.random() * 11);
-        if (option !== item.answer) wrongOptions.add(option);
-      }
-      const options = [...wrongOptions,item.answer].sort(() => Math.random() - .5);
-      const answers = document.getElementById('answers');
-      answers.innerHTML = '';
-      options.forEach(option => {
-        const button = document.createElement('button');
-        button.type = 'button'; button.className = 'answer-btn'; button.textContent = toArabic(option);
-        button.addEventListener('click', () => chooseAnswer(button, option, item.answer));
-        answers.appendChild(button);
-      });
+    function getStudentName(){return document.getElementById('studentName').value.trim();}
+    function updateWelcome(){const name=getStudentName();document.getElementById('welcomeText').textContent=name?`أهلًا يا ${name}! 👋`:'أهلًا يا بطلة! 👋';}
+    function normalizeAnswer(text){return text.replace(/[٠-٩]/g,d=>String(arabicDigits.indexOf(d))).replace(/[۰-۹]/g,d=>String('۰۱۲۳۴۵۶۷۸۹'.indexOf(d))).trim();}
+    function makeQuestions(){
+      const values=Array.from({length:10},(_,i)=>i+1).sort(()=>Math.random()-.5).slice(0,8);
+      questions=values.map(n=>({factor:n,answer:selectedTable*n}));
     }
-
-    function chooseAnswer(button, choice, correctAnswer) {
-      if (answered) return;
-      answered = true;
-      const isCorrect = choice === correctAnswer;
-      const feedback = document.getElementById('quizFeedback');
-      document.querySelectorAll('.answer-btn').forEach(option => {
-        option.disabled = true;
-        if (Number('٠١٢٣٤٥٦٧٨٩'.indexOf(option.textContent)) === correctAnswer) option.classList.add('right');
-      });
-      if (isCorrect) {
-        score++;
-        feedback.textContent = 'إجابة صحيحة! أحسنتِ يا بطلة 🌟';
-        feedback.style.color = '#21875f';
-      } else {
-        button.classList.add('wrong');
-        feedback.textContent = `ليست هذه المرة؛ الإجابة الصحيحة ${toArabic(correctAnswer)}. واصلي المحاولة!`;
-        feedback.style.color = '#c65066';
-      }
-      document.getElementById('scoreLabel').textContent = `⭐ رصيدك: ${toArabic(score)}`;
-      document.getElementById('progressFill').style.width = `${((questionIndex + 1) / quiz.length) * 100}%`;
-      document.getElementById('nextBtn').disabled = false;
-      document.getElementById('nextBtn').textContent = questionIndex === quiz.length - 1 ? 'عرض النتيجة 🏆' : 'السؤال التالي ←';
-    }
-
-    function nextQuestion() {
-      if (!answered) return;
-      questionIndex++;
-      if (questionIndex >= quiz.length) return showFinish();
+    function startQuiz(){
+      stars=0;questionIndex=0;makeQuestions();hasAnswered=false;
+      document.getElementById('quizContent').style.display='block';document.getElementById('finish').style.display='none';
       renderQuestion();
     }
-
-    function showFinish() {
-      document.getElementById('quizContent').style.display = 'none';
-      document.getElementById('finish').style.display = 'block';
-      document.getElementById('progressFill').style.width = '100%';
-      const title = score === quiz.length ? 'يا لها من بطلة!' : score >= 5 ? 'عمل رائع!' : 'بداية جميلة!';
-      document.getElementById('finishTitle').textContent = title;
-      document.getElementById('finishText').textContent = `حصلتِ على ${toArabic(score)} من ${toArabic(quiz.length)}. ${score === quiz.length ? 'أتقنتِ القاعدتين!' : 'راجعي القاعدتين ثم جرّبي مرة أخرى.'}`;
+    function renderQuestion(){
+      hasAnswered=false;const item=questions[questionIndex];
+      document.getElementById('counter').textContent=`السؤال ${toArabic(questionIndex+1)} من ${toArabic(questions.length)}`;
+      document.getElementById('score').textContent=`⭐ النجوم: ${toArabic(stars)}`;
+      document.getElementById('progress').style.width=`${questionIndex/questions.length*100}%`;
+      document.getElementById('question').textContent=`${toArabic(selectedTable)} × ${toArabic(item.factor)} = ؟`;
+      document.getElementById('feedback').textContent='';document.getElementById('next').disabled=true;
+      const optionsSet=new Set([item.answer]);
+      while(optionsSet.size<4){const offset=Math.floor(Math.random()*9)-4;const candidate=Math.max(0,item.answer+offset);if(candidate!==item.answer)optionsSet.add(candidate);}
+      const options=[...optionsSet].sort(()=>Math.random()-.5);const box=document.getElementById('options');box.innerHTML='';
+      options.forEach(value=>{const btn=document.createElement('button');btn.type='button';btn.className='option';btn.textContent=toArabic(value);btn.addEventListener('click',()=>answerQuestion(btn,value,item.answer));box.appendChild(btn);});
     }
-
-    function restartQuiz() {
-      score = 0; questionIndex = 0;
-      makeQuiz();
-      document.getElementById('quizContent').style.display = 'block';
-      document.getElementById('finish').style.display = 'none';
-      document.getElementById('nextBtn').textContent = 'السؤال التالي ←';
-      renderQuestion();
+    function answerQuestion(chosen,value,correct){
+      if(hasAnswered)return;hasAnswered=true;const isCorrect=value===correct;
+      document.querySelectorAll('.option').forEach(btn=>{btn.disabled=true;if(normalizeAnswer(btn.textContent)===String(correct))btn.classList.add('correct');});
+      const feedback=document.getElementById('feedback');
+      if(isCorrect){stars++;feedback.textContent='إجابة صحيحة! أضفتِ نجمة إلى رصيدك 🌟';feedback.style.color='#21875f';}
+      else{chosen.classList.add('incorrect');feedback.textContent=`حاولي تذكّر الجدول؛ الإجابة الصحيحة ${toArabic(correct)}. أنتِ تستطيعين!`;feedback.style.color='#c65066';}
+      document.getElementById('score').textContent=`⭐ النجوم: ${toArabic(stars)}`;
+      document.getElementById('progress').style.width=`${(questionIndex+1)/questions.length*100}%`;
+      const next=document.getElementById('next');next.disabled=false;next.textContent=questionIndex===questions.length-1?'اكتشفي نتيجتك 🏆':'السؤال التالي ←';
     }
-
-    buildNumberRow();
-    makeQuiz();
-    renderQuestion();
+    function nextQuestion(){if(!hasAnswered)return;questionIndex++;if(questionIndex>=questions.length){showFinish();return;}renderQuestion();}
+    function showFinish(){
+      document.getElementById('quizContent').style.display='none';document.getElementById('finish').style.display='block';
+      const name=getStudentName();document.getElementById('finishTitle').textContent=stars===8?`مذهلة يا ${name||'بطلة'}!`:`أحسنتِ يا ${name||'بطلة'}!`;
+      document.getElementById('finishMessage').textContent=`جمعتِ ${toArabic(stars)} من ${toArabic(questions.length)} نجوم في جدول الضرب في ${toArabic(selectedTable)}. ${stars===8?'لقد أتقنتِ المهمة الفضائية!':'راجعي الجدول وعودي لمغامرة جديدة!'}`;
+    }
+    document.getElementById('studentName').addEventListener('input',updateWelcome);
+    document.getElementById('next').addEventListener('click',nextQuestion);
+    document.getElementById('replay').addEventListener('click',startQuiz);
+    buildJourney();selectTable(selectedTable);
   </script>
 </body>
 </html>
